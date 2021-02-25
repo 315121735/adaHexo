@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+> java 调用C/C++ 底层jvm.dll文件创建虚拟机
+>
+> *类加载的过程*
+>
+> 加载 >> 验证 >> 准备 >> 解析 >> 初始化
+>
+> 栈(不同线程调用会在栈中开辟一个当前线程栈区域)
+>
+> > 栈帧(每个方法都会都会有一快对应的区域)
+>
+> GC调优,可以直接将方法区空间定义好，不需要进行扩容产生的full gc
+>
+> 堆
+>
+> > -Xms   -Xmx
+>
+> 栈
+>
+> > -Xss
+>
+> 新生代
+>
+> > -Xmn
+>
+> 方法区
+>
+> > -XX: MetaspaceSize 设置元空间初始空间大少，默认21M到达该值触发full gc，并进行自动调整,释放内存多就降低该值,释放空间少就不超过设置值就提高该值
+> >
+> > -XX:MaxMetaspaceSize 设置元空间最大值,默认是-1，既不限制，根据本地内存大少
+>
+> -XX:-UseCompressedOops 禁止指针压缩 jdk1.8默认开启
+>
+> -XX:+UseCompressedClassPointers jdk1.8默认开启只压缩对象头里的Klass pointer
+>
+> -XX:-DoEscapeAnalysis 关闭逃逸分析(用来优化内存分配位置) jdk8默认开启
+>
+> -XX:+PrintGC 开启GC日志打印
+>
+> -XX:+PrintGCDetails 打印JVM参数
+>
+> -XX:MaxTenuringThreshold 设置进入老年代年龄
 
-You can use the [editor on GitHub](https://github.com/315121735/adaHexo.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/315121735/adaHexo.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
